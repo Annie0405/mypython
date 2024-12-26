@@ -2,6 +2,14 @@
 
 管理自己的笔记和python小工具
 
+## file_process
+
+文件操作工具
+
+- `panel_main.py`: 可视化面板，集成所有功能
+
+- `panel_rand_move`: 随机移动文件
+
 ## git
 
 - `在conda环境下克隆github远程仓库.md`

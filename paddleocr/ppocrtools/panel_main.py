@@ -2,7 +2,8 @@
 ppocr相关工具的可视化面板
 集成所有ppocr工具
 """
-from panel_spilt_train_val_test import panel_split_train_val_test
+# from panel_spilt_train_val_test import panel_split_train_val_test
+from panel_spilt_train_val_test import TrainValTestSplitterApp
 import tkinter as tk
 
 # 实例化窗口
@@ -28,7 +29,7 @@ for i in range(3):
 root.grid_columnconfigure(0, weight=1)  # 居中列
 
 # 创建按钮
-button_rand_momve = tk.Button(root, text="训练集划分", command=panel_split_train_val_test)
+button_rand_momve = tk.Button(root, text="训练集划分", command=lambda: TrainValTestSplitterApp())
 button_rand_momve.grid(row=1, column=0)
 
 # 显示主窗口

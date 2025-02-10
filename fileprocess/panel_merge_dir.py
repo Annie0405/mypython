@@ -1,5 +1,5 @@
 import tkinter as tk
-from merge_dirs import gen_dir_list, merge_dirs
+from fileprocess.merge_dirs import gen_dir_list, merge_dirs
 
 
 class DirMergeApp:

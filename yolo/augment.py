@@ -178,12 +178,23 @@ def process_directory(in_image_dir, in_label_dir, out_image_dir, out_label_dir):
         augment_image_and_update_labels(image_path, label_path, out_image_dir, out_label_dir)
 
 
-# 设置输入和输出目录（可以相同）
-root_dir = r"/path/to/root"
-in_image_dir = os.path.join(root_dir, 'in_image_dir')
-in_label_dir = os.path.join(root_dir, 'in_label_dir')
-out_image_dir = os.path.join(root_dir, 'out_image_dir')
-out_label_dir = os.path.join(root_dir, 'out_label_dir')
+def augment(in_dir, out_dir):
+    in_image_dir = os.path.join(in_dir, 'images')
+    in_label_dir = os.path.join(in_dir, 'labels')
+    out_image_dir = os.path.join(out_dir, 'out_image_dir')
+    out_label_dir = os.path.join(out_dir, 'out_label_dir')
+    # 执行数据增强
+    process_directory(in_image_dir, in_label_dir, out_image_dir, out_label_dir)
+    print("数据增强完毕")
 
-# 执行数据增强
-process_directory(in_image_dir, in_label_dir, out_image_dir, out_label_dir)
+
+if __name__ == '__main__':
+    # 设置输入和输出目录（可以相同）
+    root_dir = r"/path/to/root"
+    in_image_dir = os.path.join(root_dir, 'in_image_dir')
+    in_label_dir = os.path.join(root_dir, 'in_label_dir')
+    out_image_dir = os.path.join(root_dir, 'out_image_dir')
+    out_label_dir = os.path.join(root_dir, 'out_label_dir')
+
+    # 执行数据增强
+    process_directory(in_image_dir, in_label_dir, out_image_dir, out_label_dir)

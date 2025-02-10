@@ -1,5 +1,5 @@
 import tkinter as tk
-from split_train_val_test import split_train_val_test
+from paddleocr.ppocrtools.split_train_val_test import split
 
 
 class TrainValTestSplitterApp:
@@ -131,4 +131,4 @@ class TrainValTestSplitterApp:
         val = self.entries["val"].get()
         test = self.entries["test"].get()
         mode = self.entries["mode"].get()
-        split_train_val_test(root_dir, server_dir, train, val, test, mode)
+        split(root_dir, server_dir, train, val, test, mode)

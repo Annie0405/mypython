@@ -7,7 +7,7 @@ from shapely.geometry import Polygon
 
 def polygon_verify(labelme_dir):
     # 初始化计数器
-    count = {"error_format": 0, "missing_points": 0, "unclosed": 0, "illegal": 0}
+    count = {"error_format": 0, "missing_points": 0, "illegal": 0}
 
     # 遍历所有 JSON 文件
     for json_file in os.listdir(labelme_dir):
@@ -41,10 +41,13 @@ def polygon_verify(labelme_dir):
                     continue
 
     # 打印错误信息
-    print("错误信息:")
-    for key, value in count.items():
-        if value > 0:
-            print(f"{key}: {value}")
+    if sum(count.values()):
+        print("校验完成！错误信息:", sum(count.values()))
+        for key, value in count.items():
+            if value > 0:
+                print(f"{key}: {value}")
+    else:
+        print("校验完成！所有数据都合法")
 
 
 class Labelme2COCO:

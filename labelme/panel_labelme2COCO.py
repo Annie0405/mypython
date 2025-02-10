@@ -1,5 +1,5 @@
 import tkinter as tk
-from labelme2COCO import polygon_verify, Labelme2COCO
+from labelme.labelme2COCO import polygon_verify, Labelme2COCO
 from tkbuilder.panel_settings import setup_window
 
 

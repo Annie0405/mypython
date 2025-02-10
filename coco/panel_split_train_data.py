@@ -28,7 +28,7 @@ class TrainDataSpiltApp:
         # 分割比例
         self.frame_scale = tk.Frame(self.root, width=620, height=100)
         self.frame_scale.place(x=50, y=290)
-        self.frame_file.pack_propagate(False)
+        self.frame_scale.pack_propagate(False)
 
     def _create_widgets(self):
         # 文件提示
@@ -47,13 +47,13 @@ class TrainDataSpiltApp:
                                text=
                                "root_dir/\n" +
                                "├────1_original_data_COCO/\n" +
-                               "│    ├────annotations/\n" +
-                               "│    │    └────annotations_coco.json\n"
-                               "│    └────images/\n" +
-                               "│         ├────image000.jpg\n" +
-                               "│         ├────image001.jpg\n" +
-                               "│         ├────image002.jpg\n" +
-                               "│         └────......\n" +
+                               "│            ├────annotations/\n" +
+                               "│            │            └────annotations_coco.json\n"
+                               "│            └────images/\n" +
+                               "│                         ├────image000.jpg\n" +
+                               "│                         ├────image001.jpg\n" +
+                               "│                         ├────image002.jpg\n" +
+                               "│                         └────......\n" +
                                "└────2_labels/\n",
                                justify="left")
         label_tips2.pack()

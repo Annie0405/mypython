@@ -30,5 +30,5 @@ class MainPanelApp:
         self.root.grid_columnconfigure(0, weight=1)  # 居中列
         # 创建按钮
         for i, (text, command) in enumerate(self.buttons.items()):
-            button = tk.Button(self.root, text=text, command=lambda: command(), width=self.button_width)
+            button = tk.Button(self.root, text=text, command=lambda cmd=command: cmd(), width=self.button_width)
             button.grid(row=i+1, column=0)

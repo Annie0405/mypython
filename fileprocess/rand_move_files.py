@@ -26,7 +26,7 @@ def rand_move_files(path_src: str, path_dst: str, num: int):
         dst_file = os.path.join(path_dst, file_name)
         shutil.move(src_file, dst_file)
 
-    print(f"已成功从{path_src}随机移动{num}张图片到{path_dst}")
+    print(f"已成功从 {path_src} 随机移动 {num} 张图片到 {path_dst}")
 
 
 if __name__ == '__main__':

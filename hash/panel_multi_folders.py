@@ -1,4 +1,4 @@
-from deduplicate_multi_folders import deduplicate_multiple_folders
+from hash.deduplicate_multi_folders import deduplicate_multiple_folders
 import tkinter as tk
 
 

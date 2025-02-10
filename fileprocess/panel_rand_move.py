@@ -1,4 +1,4 @@
-from rand_move_files import rand_move_files
+from fileprocess.rand_move_files import rand_move_files
 import tkinter as tk
 
 

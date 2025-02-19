@@ -145,7 +145,7 @@ class DrvLicLabelCheckerApp:
         # region 关键词数量校验
         if args["line"].count(PLATE_NO) > 2 or args["line"].count("GVW") > 2:
             args["flag"] = 0
-            self.outputs["output"].insert(tk.END, f"错误！{args["image"]}：PlateNo出现次数为 {args["line"].count(PLATE_NO)}\n")
+            self.outputs["output"].insert(tk.END, f"错误！{args["image"]}：PlateNo或GVW出现次数不对\n")
         for KEY in OTHER_18:
             if args["line"].count(KEY) > 1 and KEY != "GVW":
                 args["flag"] = 0

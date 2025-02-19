@@ -100,8 +100,18 @@ python tools/deploy/caffe2_converter.py  --format torchscript --output train_dat
 
 - ```shell
   # 单独安装推理的环境
+  conda create --name dt_infer python==3.8.16
+  conda activate dt_infer
   pip install torch==1.8.1 torchvision==0.9.1
   conda install opencv
+  ```
+
+- ```shell
+  # 单独安装推理的环境
+  conda create --name dt_infer python==3.8.20
+  conda activate dt_infer
+  pip install torch==1.10 torchvision==0.11.1 torchaudio==0.10.0 --extra-index-url https://download.pytorch.org/whl/cu121
+  pip install opencv-python
   ```
 
 ### 2. 推理代码

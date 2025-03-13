@@ -7,6 +7,7 @@
 import os
 import hashlib
 import shutil
+from stream.read import read_all_files
 
 
 def calculate_file_hash(file_path):
@@ -21,10 +22,10 @@ def calculate_file_hash(file_path):
 def get_file_hashes(folder_path):
     """获取文件夹内所有文件的哈希值"""
     file_hashes = {}
-    for file_name in os.listdir(folder_path):
-        file_path = os.path.join(folder_path, file_name)
-        if os.path.isfile(file_path):
-            file_hashes[calculate_file_hash(file_path)] = file_name
+    # 使用 read_all_files 获取所有文件路径
+    file_paths = read_all_files(folder_path, has_subdir=False)
+    for file_path in file_paths:
+        file_hashes[calculate_file_hash(file_path)] = file_path  # 直接存完整路径
     return file_hashes
 
 
@@ -41,13 +42,13 @@ def find_unique_files(folder_a, folder_b):
 def deduplicate_multiple_folders(folder_a, folder_b, folder_c):
     unique_files = find_unique_files(folder_a, folder_b)
 
-    for file_name in unique_files:
-        source_path = os.path.join(folder_a, file_name)
+    for source_path in unique_files:
+        file_name = os.path.basename(source_path)
         destination_path = os.path.join(folder_c, file_name)
         shutil.copy(source_path, destination_path)
 
     length = len(unique_files)
-    print(f"去重完毕, 未重复文件有{length}个")
+    print(f"去重完毕, 未重复文件有 {length} 个")
 
 
 if __name__ == '__main__':

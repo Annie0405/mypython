@@ -6,6 +6,7 @@ from paddleocr.ppocrtools.panel_spilt_train_val_test import TrainValTestSplitter
 from paddleocr.ppocrtools.panel_label2detrec import Label2DetRecApp
 from paddleocr.ppocrtools.panel_merge_label import MergeLabelApp
 from paddleocr.ppocrtools.panel_merge_rec_gt import MergeRecGtApp
+from paddleocr.ppocrtools.panel_check import CheckApp
 from tkbuilder.main_panel import MainPanelApp
 
 
@@ -20,6 +21,7 @@ class PPOCRToolsApp:
                 "Label文件中导出det或rec标注": Label2DetRecApp,
                 "Label合并": MergeLabelApp,
                 "rec_gt合并": MergeRecGtApp,
+                "图片和标注匹配校验": CheckApp,
             },
             button_width=30,
         )

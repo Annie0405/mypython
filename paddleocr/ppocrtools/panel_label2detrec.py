@@ -43,9 +43,9 @@ class Label2DetRecApp:
         label_tips = tk.Label(self.frame_tips, text="*路径中不得包含中文字符")
         label_tips.place(relx=0.5, rely=0.5, anchor="center")
         # 下拉框
-        options = ["", "det", "rec"]
+        options = ["det", "rec"]
         combo = ttk.Combobox(self.frame_combo, values=options, width=10)
-        combo.set("")
+        combo.set("det")
         combo.place(relx=0.5, rely=0.5, anchor="center")
         self.entries["mode"] = combo
         # 底部按钮

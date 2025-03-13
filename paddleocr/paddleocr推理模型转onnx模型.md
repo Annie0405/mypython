@@ -48,15 +48,30 @@ paddle2onnx --model_dir ./inference/ch_PP-OCRv3_rec_infer \
 
 ### 1. 通用参数
 
+- model_path
 
+- use_gpu
+- gpu_id
 
 ### 2. det参数
 
-
+- box_type
+- limit_side_len
+- limit_type
+- thresh
+- box_thresh
+- use_dilation
+- score_mode
+- max_candidates
+- unclip_ratio
 
 ### 3. rec参数
 
-
+- rec_batch_num
+- rec_image_shape
+- return_word_box
+- rec_char_dict_path
+- use_space_char
 
 ## 四、推理预测
 
